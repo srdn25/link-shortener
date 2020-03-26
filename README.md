@@ -48,7 +48,8 @@ This service based on
 
     - `/login` (POST) Auth = return auth_token
     - `/link`  (POST) Create link = return userId+linkSlug
-    - `/link`  (DELETE) Remove link = return { error } or empty 200 status if success
+    - `/link/delete`  (DELETE) Remove link = return { error } or empty 200 status if success
+    - `/link/delete/group`  (DELETE) Remove bulk links by slugs = return { error } or empty 200 status if success
     - `/link/all` (GET) Get customer links = return { count, list: [], page, perPage, pages }
     Each link in list should have
         - name
