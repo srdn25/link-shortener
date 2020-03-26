@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "set NODE_ENV=development && nodemon --trace-warnings --inspect src/index.js",
     "prod": "set NODE_ENV=production && node src/index.js",
+    "db:migrate": "node node_modules/.bin/sequelize db:migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,9 +32,11 @@
   "homepage": "https://github.com/srdn25/link-shortener#readme",
   "dependencies": {
     "fastify": "^2.13.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "sequelize": "^5.21.5"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "sequelize-cli": "^5.5.1"
   }
 }

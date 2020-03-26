@@ -21,7 +21,7 @@ This service based on
 
 - #### Tables
 
-    - Each link should have (https://domain.com/userId/slug => https://domain.com/123/YQwCA)
+    - Each link should have (https://domain.com/customerId/slug => https://domain.com/123/YQwCA)
         - Opening count all,
         - Opening by Countries (like UK:3, USA: 15, RUS: 7),
         - Opening by devices (like Android: 5, iOS: 3, Chrome: 15),
@@ -29,7 +29,7 @@ This service based on
         - Uniq slug (randomString). Should be only characters
         - name
         - source (real link),
-        - userId,
+        - customerId,
         - expiredDate
         - createdAt
     
@@ -38,16 +38,16 @@ This service based on
         - password
         - name
     
-    - Policy (uniq by version + userId)
+    - Policy (uniq by version + customerId)
         - version
         - text
-        - userId
+        - customerId
         - accepted (boolean)
         
 - #### Endpoints
 
     - `/login` (POST) Auth = return auth_token
-    - `/link`  (POST) Create link = return userId+linkSlug
+    - `/link`  (POST) Create link = return customerId+linkSlug
     - `/link/delete`  (DELETE) Remove link = return { error } or empty 200 status if success
     - `/link/delete/group`  (DELETE) Remove bulk links by slugs = return { error } or empty 200 status if success
     - `/link/all` (GET) Get customer links = return { count, list: [], page, perPage, pages }
@@ -60,7 +60,7 @@ This service based on
         - countries opening count { UK, USA, UA, RUS, CH }
         - expired date
     - `/link/{slug}` (GET) Get info by link
-    From auth token get userId, find link in database by userId, linkSlug
+    From auth token get customerId, find link in database by customerId, linkSlug
     return next info
         - opening count all
         - opening count by devices
