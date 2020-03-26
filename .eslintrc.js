@@ -4,7 +4,6 @@ module.exports = {
         "es6": true,
         "node": true
     },
-    "extends": "eslint:recommended",
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -12,8 +11,11 @@ module.exports = {
     "parserOptions": {
         "ecmaVersion": 2018
     },
+    "plugins": ["prettier"],
+    "extends": ["eslint:recommended", "prettier"],
     "rules": {
-        "indent": ["error", 2, { "SwitchCase":  1 }],
+        "prettier/prettier": ["error"],
+        "indent": ["error", 2, { "SwitchCase": 1 }],
         "semi": ["error", "always"],
         "quotes": ["error", "single", { "allowTemplateLiterals": true }],
         "no-unused-vars": ["error"],
