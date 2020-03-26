@@ -1,18 +1,19 @@
 module.export = {
   logger: {
     serializers: {
-      res(res) {
+      res({ statusCode }) {
         // The default
         return {
-          statusCode: res.statusCode
+          statusCode
         }
       },
-      req(req) {
+      req({ method, url, path, parameters, headers }) {
         return {
-          method: req.method,
-          url: req.url,
-          path: req.path,
-          parameters: req.parameters,
+          method,
+          url,
+          path,
+          parameters,
+          headers,
         };
       }
     }

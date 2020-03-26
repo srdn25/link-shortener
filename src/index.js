@@ -6,10 +6,10 @@ const fastify = require('fastify')({
     file: 'logs/app.log',
   },
 });
+const router = require('./router');
 
-fastify.get('/ping', async () => {
-  return { response: 'Pong' };
-});
+// init routes
+router(fastify);
 
 const start = async () => {
   try {

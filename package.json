@@ -33,5 +33,7 @@
     "fastify": "^2.13.0",
     "nodemon": "^2.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
