@@ -4,6 +4,8 @@ Link shortener for create short link, and grab statistics for analytics your lin
 
 This service based on
 - node.js
+- fastify
+- ajv
 - postgres
 - sequelize
 
