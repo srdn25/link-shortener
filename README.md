@@ -7,8 +7,10 @@ This service based on
 - postgres
 - sequelize
 
-##Requirements
-###v1
+## Requirements
+
+### v1
+
 - One customer can have maximum 1000 links
 - Each link should expire after 7 days (default)
 - User can switch expired time for link to unlimited (this will not clear old links)
@@ -17,7 +19,8 @@ This service based on
 - Auth only via google
 - Customer can't update link, because then in statistics dosn't make sense 
 
-- ####Tables
+- #### Tables
+
     - Each link should have (https://domain.com/userId/slug => https://domain.com/123/YQwCA)
         - Opening count all,
         - Opening by Countries (like UK:3, USA: 15, RUS: 7),
@@ -41,7 +44,8 @@ This service based on
         - userId
         - accepted (boolean)
         
-- ####Endpoints
+- #### Endpoints
+
     - `/login` (POST) Auth = return auth_token
     - `/link`  (POST) Create link = return userId+linkSlug
     - `/link`  (DELETE) Remove link = return { error } or empty 200 status if success
