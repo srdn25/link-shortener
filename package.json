@@ -4,6 +4,8 @@
   "description": "Shortener link service",
   "main": "src/index.js",
   "scripts": {
+    "dev": "set NODE_ENV=development && nodemon --trace-warnings --inspect src/index.js",
+    "prod": "set NODE_ENV=production && node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,5 +28,10 @@
   "bugs": {
     "url": "https://github.com/srdn25/link-shortener/issues"
   },
-  "homepage": "https://github.com/srdn25/link-shortener#readme"
+  "homepage": "https://github.com/srdn25/link-shortener#readme",
+  "dependencies": {
+    "fastify": "^2.13.0",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {}
 }
