@@ -14,7 +14,9 @@ module.exports = {
     "plugins": ["prettier"],
     "extends": ["eslint:recommended", "prettier"],
     "rules": {
-        "prettier/prettier": ["error"],
+        "prettier/prettier": ["error", {}, {
+            "usePrettierrc": false
+        }],
         "indent": ["error", 2, { "SwitchCase": 1 }],
         "semi": ["error", "always"],
         "quotes": ["error", "single", { "allowTemplateLiterals": true }],
@@ -23,6 +25,7 @@ module.exports = {
         "no-console": "error",
         "keyword-spacing": ["error", { "after": true }],
         "object-curly-spacing": ["error", "always"],
+        'eol-last': ["error", "always"],
         "max-len": [
             "error",
             {
