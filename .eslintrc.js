@@ -11,15 +11,11 @@ module.exports = {
     "parserOptions": {
         "ecmaVersion": 2018
     },
-    "plugins": ["prettier"],
-    "extends": ["eslint:recommended", "prettier"],
+    "extends": ["eslint:recommended"],
     "rules": {
-        "prettier/prettier": ["error", {}, {
-            "usePrettierrc": false
-        }],
         "indent": ["error", 2, { "SwitchCase": 1 }],
         "semi": ["error", "always"],
-        "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+        "quotes": ["error", "single"],
         "no-unused-vars": ["error"],
         "linebreak-style": ["error", "unix"],
         "no-console": "error",
