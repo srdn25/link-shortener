@@ -11,7 +11,7 @@
     "eslint:fix": "node node_modules/.bin/eslint --fix src/**/*.js",
     "docker:build": "docker build --no-cache .",
     "docker:clear": "docker system prune -a --force",
-    "docker:run": "docker-compose up -d",
+    "docker:run": "docker-compose up --build -d",
     "docker:logs": "docker-compose logs --follow",
     "docker:exec": "docker exec link-shortener_app_1 -it bash",
     "docker:stop": "docker-compose stop",
