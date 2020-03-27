@@ -8,6 +8,8 @@ This service based on
 - ajv
 - postgres
 - sequelize
+- docker
+- docker-compose
 
 ## Requirements
 

@@ -10,4 +10,4 @@ RUN npm ci
 
 COPY . /home/app
 
-CMD ./src/worker/script/start.sh
+ENTRYPOINT sh ./src/worker/script/start.sh
