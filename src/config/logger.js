@@ -5,7 +5,7 @@ module.export = {
         // The default
         return {
           statusCode
-        }
+        };
       },
       req({ method, url, path, parameters, headers }) {
         return {
