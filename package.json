@@ -12,7 +12,7 @@
     "docker:build": "docker build --no-cache .",
     "docker:clear": "docker system prune -a --force",
     "docker:run": "docker-compose up -d",
-    "docker:logs": "docker-compose logs",
+    "docker:logs": "docker-compose logs --follow",
     "docker:exec": "docker exec link-shortener_app_1 -it bash",
     "docker:stop": "docker-compose stop",
     "test": "echo \"Error: no test specified\" && exit 1"
