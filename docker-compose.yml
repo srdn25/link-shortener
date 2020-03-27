@@ -1,0 +1,27 @@
+# docker-compose.yml
+version: "3"
+services:
+  app:
+    build: .
+    volumes:
+    - .:/home/app
+    - /home/app/node_modules
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    environment:
+      PSQL_HOST: postgres
+      PSQL_PASSWORD: postgres
+      PSQL_USER: docker
+      PSQL_DATABASE: sandbox
+
+  postgres:
+    image: postgres:11.7-alpine
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_DB: sandbox
+      POSTGRES_PASSWORD: postgres

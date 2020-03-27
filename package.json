@@ -9,6 +9,11 @@
     "db:migrate": "node node_modules/.bin/sequelize db:migrate",
     "eslint": "node node_modules/.bin/eslint src/**/*.js",
     "eslint:fix": "node node_modules/.bin/eslint --fix src/**/*.js",
+    "docker:buid": "docker build --no-cache .",
+    "docker:clearcache": "docker system prune",
+    "docker:composer": "docker-compose up -d",
+    "docker:logs": "docker-compose logs",
+    "docker:exec": "docker exec -it bash",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
