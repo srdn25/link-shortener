@@ -2,7 +2,7 @@
 const config = require('../../config');
 
 module.exports = (sequelize, DataTypes) => {
-  const Link = sequelize.define('Link', {
+  const Link = sequelize.define('link', {
     openCount: DataTypes.INTEGER,
     openByCountries: DataTypes.JSONB,
     openByDevices: DataTypes.JSONB,
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'customer',
+        model: 'customers',
         key: 'id',
       }
     },
@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
     Link.belongsTo(models.customer);
   };
 
-  Link.beforeCreate((link, options) => {
+  Link.beforeCreate((link) => {
     const now = new Date();
     link.expiredDate = new Date(now.setDate(now.getDate() + config.db.daysBeforeLinkExpired));
   });
