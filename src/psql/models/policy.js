@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     customerId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'customers',
+        key: 'id',
+      },
     },
     accepted: {
       type: DataTypes.BOOLEAN,
@@ -29,5 +33,6 @@ module.exports = (sequelize, DataTypes) => {
   Policy.associate = function(models) {
     Policy.belongsTo(models.customer);
   };
+
   return Policy;
 };

@@ -19,6 +19,10 @@ module.exports = {
       customerId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {
+          model: 'customers',
+          key: 'id',
+        },
       },
       accepted: {
         type: Sequelize.BOOLEAN,
