@@ -9,9 +9,10 @@
     "db:migrate": "node node_modules/.bin/sequelize db:migrate",
     "eslint": "node node_modules/.bin/eslint src/**/*.js",
     "eslint:fix": "node node_modules/.bin/eslint --fix src/**/*.js",
+    "docker:run": "npm run docker:build && npm run docker:start",
     "docker:build": "docker build --no-cache .",
     "docker:clear": "docker system prune -a --force",
-    "docker:run": "docker-compose up --build -d",
+    "docker:start": "docker-compose up --build -d",
     "docker:logs": "docker-compose logs --follow",
     "docker:exec": "docker exec link-shortener_app_1 -it bash",
     "docker:stop": "docker-compose stop",
@@ -47,6 +48,7 @@
     "fastify": "^2.13.0",
     "nodemon": "^2.0.2",
     "pg": "7.18.2",
+    "pg-hstore": "2.3.3",
     "sequelize": "5.21.5"
   },
   "devDependencies": {

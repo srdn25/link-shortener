@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = () => {
+const updateDatabaseConfig = () => {
   const options = {
     'development': {
       'username': process.env.PSQL_USER || 'postgres',
@@ -31,3 +31,5 @@ module.exports = () => {
 
   fs.writeFileSync(path.join(__dirname, '../psql/config.json'), JSON.stringify(options));
 };
+
+updateDatabaseConfig();
