@@ -5,7 +5,7 @@ WORKDIR /home/app
 
 COPY package.json /home/app/
 COPY package-lock.json /home/app/
-COPY src/worker/script/create_test_database_postgres.sh /docker-entrypoint-initdb.d/
+COPY src/worker/script/init_additional_databases.sql /docker-entrypoint-initdb.d/
 
 RUN npm ci
 

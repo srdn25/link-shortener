@@ -24,6 +24,8 @@ services:
     image: postgres:11.7-alpine
     ports:
       - "5432:5432"
+    volumes:
+      - ./src/worker/script/init_additional_databases.sql:/docker-entrypoint-initdb.d/init_additional_databases.sql
     environment:
       POSTGRES_USER: docker
       POSTGRES_DB: sandbox

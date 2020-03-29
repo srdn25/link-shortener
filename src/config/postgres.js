@@ -9,15 +9,13 @@ const updateDatabaseConfig = () => {
       'database': process.env.PSQL_DATABASE || 'postgres',
       'host': process.env.PSQL_HOST || '127.0.0.1',
       'dialect': 'postgres',
-      'operatorsAliases': false
     },
     'test': {
-      'username': process.env.PSQL_USER,
-      'password': process.env.PSQL_PASSWORD,
-      'database': process.env.PSQL_DATABASE_TEST || 'db_test',
-      'host': process.env.PSQL_HOST,
+      'username': process.env.PSQL_USER || 'docker',
+      'password': process.env.PSQL_PASSWORD || 'postgres',
+      'database': process.env.PSQL_DATABASE_TEST || 'test',
+      'host': process.env.PSQL_HOST || '127.0.0.1',
       'dialect': 'postgres',
-      'operatorsAliases': false
     },
     'production': {
       'username': process.env.PSQL_USER,
@@ -25,7 +23,6 @@ const updateDatabaseConfig = () => {
       'database': process.env.PSQL_DATABASE,
       'host': process.env.PSQL_HOST,
       'dialect': 'postgres',
-      'operatorsAliases': false
     }
   };
 
