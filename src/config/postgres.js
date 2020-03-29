@@ -12,10 +12,10 @@ const updateDatabaseConfig = () => {
       'operatorsAliases': false
     },
     'test': {
-      'username': 'root',
-      'password': null,
-      'database': 'database_test',
-      'host': '127.0.0.1',
+      'username': process.env.PSQL_USER,
+      'password': process.env.PSQL_PASSWORD,
+      'database': process.env.PSQL_DATABASE_TEST || 'db_test',
+      'host': process.env.PSQL_HOST,
       'dialect': 'postgres',
       'operatorsAliases': false
     },
@@ -30,6 +30,8 @@ const updateDatabaseConfig = () => {
   };
 
   fs.writeFileSync(path.join(__dirname, '../psql/config.json'), JSON.stringify(options));
+  // eslint-disable-next-line no-console
+  console.log('Postgres config updated');
 };
 
 updateDatabaseConfig();

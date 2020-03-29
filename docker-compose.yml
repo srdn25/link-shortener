@@ -18,6 +18,7 @@ services:
       PSQL_PASSWORD: postgres
       PSQL_USER: docker
       PSQL_DATABASE: sandbox
+      PSQL_DATABASE_TEST: test
 
   postgres:
     image: postgres:11.7-alpine
@@ -27,3 +28,8 @@ services:
       POSTGRES_USER: docker
       POSTGRES_DB: sandbox
       POSTGRES_PASSWORD: postgres
+
+  adminer:
+    image: adminer
+    ports:
+    - "8080:8080"
