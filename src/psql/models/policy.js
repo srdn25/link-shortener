@@ -22,6 +22,8 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: false,
     }
   }, {
+    tableName: 'policy',
+    freezeTableName: true,
     indexes: [
       {
         unique: true,

@@ -14,7 +14,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-  }, {});
+  }, {
+    tableName: 'customer',
+    freezeTableName: true,
+  });
 
   Customer.associate = function(models) {
     Customer.hasMany(models.link);

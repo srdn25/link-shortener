@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('links', {
+    return queryInterface.createTable('link', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -36,7 +36,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'customers',
+          model: 'customer',
           key: 'id',
         },
       },
@@ -51,6 +51,6 @@ module.exports = {
     });
   },
   down: (queryInterface) => {
-    return queryInterface.dropTable('links');
+    return queryInterface.dropTable('link');
   }
 };

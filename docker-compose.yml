@@ -14,7 +14,7 @@ services:
       - "3033:3033"
       - "9229:9229"
     environment:
-      PSQL_HOST: postgres
+      PSQL_HOST: 0.0.0.0
       PSQL_PASSWORD: postgres
       PSQL_USER: docker
       PSQL_DATABASE: sandbox
@@ -30,8 +30,3 @@ services:
       POSTGRES_USER: docker
       POSTGRES_DB: sandbox
       POSTGRES_PASSWORD: postgres
-
-  adminer:
-    image: adminer
-    ports:
-    - "8080:8080"

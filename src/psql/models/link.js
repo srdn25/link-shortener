@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'customers',
+        model: 'customer',
         key: 'id',
       }
     },
@@ -32,6 +32,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   }, {
+    tableName: 'link',
+    freezeTableName: true,
     indexes: [
       {
         unique: true,
