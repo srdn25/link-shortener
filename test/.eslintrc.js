@@ -4,6 +4,6 @@ module.exports = {
     mocha: true,
   },
   rules: {
-    "no-global-assign": ["error", {"exceptions": ["expect"]}],
+    "no-undef": "off",
   },
 };
