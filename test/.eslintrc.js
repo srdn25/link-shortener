@@ -3,4 +3,7 @@ module.exports = {
     node: true,
     mocha: true,
   },
+  rules: {
+    "no-global-assign": ["error", {"exceptions": ["expect"]}],
+  },
 };

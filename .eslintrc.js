@@ -21,7 +21,8 @@ module.exports = {
         "no-console": "error",
         "keyword-spacing": ["error", { "after": true }],
         "object-curly-spacing": ["error", "always"],
-        'eol-last': ["error", "always"],
+        "eol-last": ["error", "always"],
+        "arrow-parens": ["error", "always"],
         "max-len": [
             "error",
             {

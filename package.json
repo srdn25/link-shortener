@@ -15,9 +15,11 @@
     "docker:clear": "docker system prune -a --force",
     "docker:start": "docker-compose up --build -d",
     "docker:logs": "docker-compose logs --follow",
-    "docker:exec": "docker exec link-shortener_app_1 -it bash",
+    "docker:exec": "docker exec -it link-shortener_app_1 /bin/sh",
+    "docker:app:stop": "docker-compose stop app",
+    "docker:app:start": "docker-compose start app",
     "docker:stop": "docker-compose stop",
-    "test": "node ./node_modules/.bin/mocha test/index.spec.js"
+    "test": "node ./node_modules/.bin/mocha --inspect=9229 test/index.spec.js"
   },
   "husky": {
     "hooks": {
@@ -46,6 +48,7 @@
   },
   "homepage": "https://github.com/srdn25/link-shortener#readme",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "chai": "^4.2.0",
     "fastify": "^2.13.0",
     "mocha": "^7.1.1",
