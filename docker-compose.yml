@@ -27,7 +27,7 @@ services:
       - "3033:3033"
       - "9229:9229"
     environment:
-      PSQL_HOST: 0.0.0.0
+      PSQL_HOST: postgres
       PSQL_PASSWORD: postgres
       PSQL_USER: docker
       PSQL_DATABASE: sandbox
