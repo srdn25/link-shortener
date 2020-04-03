@@ -1,26 +1,6 @@
 # docker-compose.yml
 version: "2.1"
 services:
-  app:
-    build: .
-    volumes:
-    - .:/home/app
-    - /home/app/node_modules
-    env_file:
-      - .env
-    depends_on:
-      postgres:
-        condition: service_healthy
-    ports:
-      - "3033:3033"
-      - "9229:9229"
-    environment:
-      PSQL_HOST: 0.0.0.0
-      PSQL_PASSWORD: postgres
-      PSQL_USER: docker
-      PSQL_DATABASE: sandbox
-      PSQL_DATABASE_TEST: test
-
   postgres:
     image: postgres:11.7-alpine
     restart: always
@@ -37,3 +17,24 @@ services:
       POSTGRES_USER: docker
       POSTGRES_DB: sandbox
       POSTGRES_PASSWORD: postgres
+
+  app:
+    build: .
+    entrypoint: ["/bin/sh", "./src/worker/script/start.sh"]
+    volumes:
+      - .:/home/app
+      - /home/app/node_modules
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "3033:3033"
+      - "9229:9229"
+    environment:
+      PSQL_HOST: 0.0.0.0
+      PSQL_PASSWORD: postgres
+      PSQL_USER: docker
+      PSQL_DATABASE: sandbox
+      PSQL_DATABASE_TEST: test

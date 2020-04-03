@@ -4,9 +4,9 @@ const path = require('path');
 const updateDatabaseConfig = () => {
   const options = {
     'development': {
-      'username': process.env.PSQL_USER || 'postgres',
-      'password': process.env.PSQL_PASSWORD || null,
-      'database': process.env.PSQL_DATABASE || 'postgres',
+      'username': process.env.PSQL_USER || 'docker',
+      'password': process.env.PSQL_PASSWORD || 'postgres',
+      'database': process.env.PSQL_DATABASE || 'sandbox',
       'host': process.env.PSQL_HOST || '127.0.0.1',
       'dialect': 'postgres',
     },
