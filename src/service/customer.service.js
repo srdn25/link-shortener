@@ -1,9 +1,9 @@
-const psql = require('../psql/models');
+const { customer: repository } = require('../repository');
 
 module.exports = {
-  checkPassword: ({ email, password }) => psql.customer.findOne({ where: { email } })
+  checkPassword: ({ email, password }) => repository.findByEmail(email)
     .then((user) => {
-      if (user.validPassword(password)) {
+      if (user && user.validPassword(password)) {
         return user;
       }
 
