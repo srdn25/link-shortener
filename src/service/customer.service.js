@@ -8,5 +8,7 @@ module.exports = {
       }
 
       return null;
-    })
+    }),
+
+  create: (customer) => repository.create(customer),
 };
