@@ -13,7 +13,7 @@
  * @param {String} an Optional (alphanumeric), "a" (alpha), "n" (numeric)
  * @return {String}
  */
-function randomString(len, an) {
+function randomString(len = 4, an = 'a') {
   an = an && an.toLowerCase();
   var str = '',
     i = 0,
