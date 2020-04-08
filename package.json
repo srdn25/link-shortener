@@ -48,10 +48,8 @@
   },
   "homepage": "https://github.com/srdn25/link-shortener#readme",
   "dependencies": {
-    "bcrypt": "^4.0.1",
     "chai": "^4.2.0",
     "fastify": "^2.13.0",
-    "googleclient-srdn": "^1.0.0",
     "mocha": "^7.1.1",
     "nodemon": "^2.0.2",
     "pg": "7.18.2",
