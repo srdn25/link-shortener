@@ -5,7 +5,7 @@ module.exports = {
     return psql.link.create(data);
   },
   findByCustomerId: (customerId) => {
-    return psql.link.find({ where: { customerId } });
+    return psql.link.findAll({ where: { customerId } });
   },
   findById: (id) => {
     return psql.link.findOne({ where: { id } });
