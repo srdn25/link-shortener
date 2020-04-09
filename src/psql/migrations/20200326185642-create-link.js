@@ -22,7 +22,6 @@ module.exports = {
       },
       slug: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       name: {
         type: Sequelize.STRING,
@@ -42,7 +41,6 @@ module.exports = {
       },
       expiredDate: {
         type: Sequelize.DATE,
-        allowNull: false,
       },
       createdAt: {
         allowNull: false,

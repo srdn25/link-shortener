@@ -1,5 +1,6 @@
 'use strict';
 const config = require('../../config');
+const { randomString: slugGenerator } = require('../../utils/randomString');
 
 module.exports = (sequelize, DataTypes) => {
   const Link = sequelize.define('link', {
@@ -9,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
     references: DataTypes.JSONB,
     slug: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
@@ -29,7 +29,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     expiredDate: {
       type: DataTypes.DATE,
-      allowNull: false,
     },
   }, {
     tableName: 'link',
@@ -48,6 +47,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Link.beforeCreate((link) => {
     const now = new Date();
+    link.slug = slugGenerator();
     link.expiredDate = new Date(now.setDate(now.getDate() + config.db.daysBeforeLinkExpired));
   });
 
