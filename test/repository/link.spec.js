@@ -12,6 +12,7 @@ describe('Link repository', function () {
     linkDescribe = await repository.create({ ...LINK_RAW, customerId: customer.id });
     const link = linkDescribe.toJSON();
 
+    LINK_RAW.customerId = customer.id;
     expect(link).to.have.all.keys(LINK_FIELDS);
   });
 });

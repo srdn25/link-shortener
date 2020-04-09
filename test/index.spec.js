@@ -54,7 +54,19 @@ after(async () => {
 });
 
 require('require-all')({
-  dirname: __dirname,
+  dirname: __dirname + '/repository',
+  filter: /spec\.js$/i,
+  recursive: true,
+});
+
+require('require-all')({
+  dirname: __dirname + '/service',
+  filter: /spec\.js$/i,
+  recursive: true,
+});
+
+require('require-all')({
+  dirname: __dirname + '/utils',
   filter: /spec\.js$/i,
   recursive: true,
 });
