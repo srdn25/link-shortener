@@ -9,6 +9,11 @@ const CUSTOMER_RAW = {
   name: 'test_user',
 };
 
+const LINK_RAW = {
+  name: 'Test Link',
+  source: 'https://google.com',
+};
+
 const CUSTOMER_FIELDS = [
   'id',
   'name',
@@ -18,8 +23,25 @@ const CUSTOMER_FIELDS = [
   'updatedAt',
 ];
 
+const LINK_FIELDS = [
+  'id',
+  'slug',
+  'name',
+  'source',
+  'createdAt',
+  'updatedAt',
+  'openCount',
+  'references',
+  'customerId',
+  'expiredDate',
+  'openByDevices',
+  'openByCountries',
+];
+
 global.CUSTOMER_RAW = CUSTOMER_RAW;
 global.CUSTOMER_FIELDS = CUSTOMER_FIELDS;
+global.LINK_RAW = LINK_RAW;
+global.LINK_FIELDS = LINK_FIELDS;
 global.expect = expect;
 global.config = config;
 
